@@ -159,7 +159,9 @@ Now we're back to the interval $0\le t\le T$.
     \draw[dashed] (3,-1.5) node[anchor=north] {$\frac{3}{4}T$} -- (3,1.5);
     \draw[dashed] (4,-1.5) node[anchor=north] {$T$} -- (4,1.5);
 
-    \draw[thick] (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1); 
+    \draw[thick] (0,-1) node[anchor=east] {$-x_0$} cos (1,0) sin (2,1) cos (3,0) sin (4,-1); 
+
+    \node[anchor=east] at (0,1) {$x_0$};
   \end{tikzpicture}
 \end{center}
 
@@ -173,7 +175,7 @@ Now we're back to the interval $0\le t\le T$.
     \draw[dashed] (3,-1.5) node[anchor=north] {$\frac{3}{4}T$} -- (3,1.5);
     \draw[dashed] (4,-1.5) node[anchor=north] {$T$} -- (4,1.5);
 
-    \draw[thick] (0,0) sin (2,1) cos (4,0);
+    \draw[thick] (0,0) sin (1,1) cos (2,0) sin (3,1) cos (4,0);
   \end{tikzpicture}
 \end{center}
 
