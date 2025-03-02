@@ -180,4 +180,93 @@ Now we're back to the interval $0\le t\le T$.
 
 In the formula for $v_{max}$ derived in Part B, $x_0$ is only to the first power, so the ratio would simply be $2:1$. This is checked pretty easily because twice the $x$ means four times the height, which means four times the potential energy. This means max kinetic energy is four times as much, and because $v$ is squared in kinetic energy, the resultant factor is simply $2$.
 
+\section {FRQ 3}
+
+\subsection {Part A}
+
+For each spring with a known spring constant, attach the rock to the spring, and compress the spring any distance. Then, time how long it takes the spring compress and extend 50 times. Record this time and the spring constant. Do this 10 times for each spring, and average the time result.
+
+\subsection {Part B}
+
+Take the time it takes for 50 compression/extensions and divide by 50 to get the period. Then, plot $\frac{1}{k}$ on the x-axis and plot $(\frac{2pi}{T})^2$ on the y-axis. The slope of the best line of fit will be approximately equal to $m$.
+
+\subsection {Part C}
+
+\subsubsection {Part i}
+
+A relationship between $L_s$ and $t_{10}$ can be obtained by using the equation for period of a pendulum. Note for a linear relationship, $L_s$ must be square rooted.
+$$
+T = 2\pi\sqrt{\frac{L}{g}}
+$$
+
+Horizontal Axis: $\sqrt{L_s}$
+
+Vertical Axis: $t_1$
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    Time for 1 oscillation (s) & $\sqrt{L_s}$ $(m^\frac{1}{2})$\\
+    \hline
+    2.72 & 0.693 \\
+    \hline
+    2.41 & 0.592 \\
+    \hline
+    1.83 & 0.447 \\
+    \hline
+    1.33 & 0.316 \\
+    \hline
+    1.01 & 0.224 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection {Part ii}
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[thick] (0,0) -- (0,6) node[anchor=east] {$t_1$};
+    \draw[thick] (0,0) -- (6,0) node[anchor=north] {$\sqrt{L_s}$};
+    \draw (1,-2pt) node[anchor=north] {$0.2$} -- (1,2pt); 
+    \draw (2,-2pt) node[anchor=north] {$0.4$} -- (2,2pt); 
+    \draw (3,-2pt) node[anchor=north] {$0.6$} -- (3,2pt); 
+    \draw (4,-2pt) node[anchor=north] {$0.8$} -- (4,2pt); 
+    \draw (5,-2pt) node[anchor=north] {$1.0$} -- (5,2pt); 
+    \draw (-2pt,1) node[anchor=east] {$0.75$} -- (2pt,1); 
+    \draw (-2pt,2) node[anchor=east] {$1.25$} -- (2pt,2); 
+    \draw (-2pt,3) node[anchor=east] {$1.75$} -- (2pt,3); 
+    \draw (-2pt,4) node[anchor=east] {$2.25$} -- (2pt,4); 
+    \draw (-2pt,5) node[anchor=east] {$2.75$} -- (2pt,5); 
+
+    \foreach \x in {1,2,3,4,5}
+    {\draw[dashed] (\x,0) -- (\x, 6);
+    \draw[dashed] (0,\x) -- (6, \x);}
+
+    \fill (3.48,4.9) circle (2pt);
+    \fill (2.96, 4.45) circle (2pt);
+    \fill (2.25, 3.2) circle (2pt);
+    \fill (1.6, 2.18) circle (2pt);
+    \fill (1.25, 1.5) circle (2pt);
+
+    \draw[dashed] (0, 0) -- (3.7, 5.05);
+
+  \end{tikzpicture}
+\end{center}
+
+\subsection {Part D}
+
+Approximate the best line of fit with a slope of:
+$$
+\frac{2.25-1.25}{0.6-0.3} = 3.333
+$$
+
+$$
+3.333 = \frac{T}{\sqrt{L}} = \frac{2\pi\sqrt{\frac{L}{g}}}{\sqrt{L}} = \frac{2\pi}{\sqrt{g}} \implies (\frac{2\pi}{3.333})^2 = g
+$$
+
+$$
+g \approx 3.554 \frac{m}{s^2}
+$$
 \end{document}
+
+
