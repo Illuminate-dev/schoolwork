@@ -1,0 +1,86 @@
+% arara: latexmk: { options: [ '-pdf' ] }
+% arara: latexmk: { options: ['-c' ] }
+\documentclass{article}
+
+\title{Physics C Unit 7 FRQs}
+\author{Henry Beveridge}
+\date{\today}
+\usepackage{amsmath}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\section{FRQ 1}
+
+\subsection{Part A}
+
+\subsubsection{Part i}
+
+For a physical pendulum, the period of oscillation is given by the formula
+$$
+T = \frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{\frac{mgd}{I}}} = 2\pi\sqrt{\frac{I}{mgd}}
+$$
+where $I$ is the moment of inertia of the pendulum, $m$ is the mass of the pendulum, $g$ is the acceleration due to gravity, and $d$ is the distance from the pivot point to the center of mass of the pendulum.
+
+Thus, we first need to derive a formula for $I$ and $d$ in terms of the given variables ($M$, $\lambda$, and $H$).
+
+For $I$,
+$$
+I = \int_0^H dm r^2 = \int_0^H \lambda y^2 dy = c \int_0^H y^3 dy = c \frac{H^4}{4}
+$$
+
+
+For $d$, we need to find the center of mass of the pendulum.
+$$
+y_{com} = \frac{\int y dm}{M} = \frac{\int_0^H y \lambda dy}{M} = \frac{\int_0^H cy^2 dy}{M} = \frac{cH^3}{3M}
+$$
+
+Substituting these into the formula for $T$,
+$$
+T = 2\pi\sqrt{\frac{I}{mgd}} = 2\pi\sqrt{\frac{c\frac{H^4}{4}}{Mg\frac{cH^3}{3M}}} = 2\pi\sqrt{\frac{3H}{4g}}
+$$
+
+
+\subsubsection{Part ii}
+
+% The change in oscillation period depends on both $I$ and $d$ because they are the only variables changing between these two objects. Thus, we must compute $I$ and $d$ for this new object.
+%
+% Since the shape of the two objects are the same, the $I_{2}$ about the original pivot is simply $I_1$ with $2H$ in place of $H$.
+% $$
+% $$
+% $I_{2,com}$ can be found using the parallel axis theorem, again with $2H$ in place of $H$.
+% $$
+% I_{2,com} = I_{2,pivot} - Md^2 = 16\frac{cH^4}{4} - MD^2
+The key thing to note is that $D$, the distance between the COM and the pivot point is constant between the two objects. So,
+
+So, the only thing that matters is the moment of inertia of the two objects. We know that because the mass remains constant but the total distance increases, the moment of inertia of the second object must be greater.
+
+$$
+d_1=d_2, I_1 < I_2 \implies T_1 < T_2
+$$
+
+
+\subsection{Part B}
+
+First, note that $I_{2,com}$ is basically the same as $I_{1,com}$ except 4 times as great because distances are squared in the moment of inertia defenition. Finding $I_{1,com}$:
+$$
+I_{1,com} = I_{1,pivot} - MD^2
+$$
+
+Finding $I_{2,com}$:
+
+$$
+I_{2,com} = 4 I_{1,com} = 4(I_{1,pivot} - MD^2) = 4I_{1,pivot} - 4MD^2
+$$
+
+Finding $I_{2,pivot}$:
+
+$$
+I_{2,pivot} = I_{2,com} + MD^2 = 4I_{1,pivot} - 3MD^2
+$$
+
+
+\end{document}
