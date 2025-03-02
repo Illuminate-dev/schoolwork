@@ -6,6 +6,7 @@
 \author{Henry Beveridge}
 \date{\today}
 \usepackage{amsmath}
+\usepackage{tikz}
 
 \begin{document}
 
@@ -82,5 +83,101 @@ $$
 I_{2,pivot} = I_{2,com} + MD^2 = 4I_{1,pivot} - 3MD^2
 $$
 
+\section {FRQ 2}
+
+\subsection {Part A}
+
+The key thing to note here is that they're looking for $\frac{T}{2}\le t \le T$, so that can throw you off.
+
+\vspace{0.4cm}
+
+\begin{center}
+  \begin{tikzpicture}
+    \fill (0,0.5) circle (2pt);
+    \fill (1,0.5) circle (2pt);
+    \fill (2,0.5) circle (2pt);
+    \fill (3,0.5) circle (2pt);
+    \fill (4,0.5) circle (2pt);
+    \fill (0,1.5) circle (2pt);
+    \fill (1,1.5) circle (2pt);
+    \fill (2,1.5) circle (2pt);
+    \fill (3,1.5) circle (2pt);
+    \fill (4,1.5) circle (2pt);
+    \draw[thick,->] (-8pt,0) -- (4.5 cm,0);
+    \draw (0,2pt) -- (0,-2pt) node[anchor=north] {$-x_0$};
+    \draw (1,2pt) -- (1,-2pt) node[anchor=north] {$-\frac{x_0}{2}$};
+    \draw (2,2pt) -- (2,-2pt) node[anchor=north] {$0$};
+    \draw (3,2pt) -- (3,-2pt) node[anchor=north] {$\frac{x_0}{2}$};
+    \draw (4,2pt) -- (4,-2pt) node[anchor=north] {$x_0$};
+    \node[] at (-1.5,0.5) {Acceleration};
+    \node[] at (-1.5,1.5) {Velocity};
+    
+    \node[anchor=south] at (0,1.7) {$v_x=0$};
+    \node[anchor=south] at (4,1.7) {$v_x=0$};
+    \draw[thick,->] (1,1.5) -- (0.5,1.5);
+    \draw[thick,->] (2,1.5) -- (1.3,1.5);
+    \node[anchor=south] at (2,1.7) {max $|v_x|$};
+    \draw[thick,->] (3,1.5) -- (2.5,1.5);
+
+    \node[anchor=south] at (2,0.6) {$a_x=0$};
+    \draw[thick,->] (0,0.5) -- (0.7,0.5);
+    \node[anchor=south] at (0,0.6) {max $|a_x|$};
+    \node[anchor=south] at (4,0.6) {max $|a_x|$};
+    \draw[thick,->] (1,0.5) -- (1.5,0.5);
+    \draw[thick,->] (3,0.5) -- (2.5,0.5);
+    \draw[thick,->] (4,0.5) -- (3.3,0.5);
+
+
+  \end{tikzpicture}
+\end{center}
+
+\subsection {Part B}
+
+Max potential energy = max kinetic energy, so just solve those equations.
+
+$$
+U_{max}=K_{max}
+$$
+$$
+mgh=\frac{1}{2}m v_{max}^2 \implies v_{max}=\sqrt{2gh}
+$$
+$$
+v_{max}=\sqrt{2gh}=\sqrt{2gBx_0^2}=x_0\sqrt{2gB}
+$$
+
+\subsection {Part C}
+
+Now we're back to the interval $0\le t\le T$.
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[dashed,->] (-2pt,0) node[anchor=east] {$0$} -- (4.4cm,0) node[anchor=west] {$t$};
+    \draw[dashed,->] (0,-1.5) node[anchor=north] {$0$} -- (0,1.5) node[anchor=south] {$x$};
+    \draw[dashed] (1,-1.5) node[anchor=north] {$\frac{1}{4}T$} -- (1,1.5);
+    \draw[dashed] (2,-1.5) node[anchor=north] {$\frac{1}{2}T$} -- (2,1.5);
+    \draw[dashed] (3,-1.5) node[anchor=north] {$\frac{3}{4}T$} -- (3,1.5);
+    \draw[dashed] (4,-1.5) node[anchor=north] {$T$} -- (4,1.5);
+
+    \draw[thick] (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1); 
+  \end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[dashed,->] (-2pt,0) node[anchor=east] {$0$} -- (4.4cm,0) node[anchor=west] {$t$};
+    \draw[dashed,->] (0,-1.5) node[anchor=north] {$0$} -- (0,1.5) node[anchor=south] {$K$};
+    \draw[dashed] (1,-1.5) node[anchor=north] {$\frac{1}{4}T$} -- (1,1.5);
+    \draw[dashed] (2,-1.5) node[anchor=north] {$\frac{1}{2}T$} -- (2,1.5);
+    \draw[dashed] (3,-1.5) node[anchor=north] {$\frac{3}{4}T$} -- (3,1.5);
+    \draw[dashed] (4,-1.5) node[anchor=north] {$T$} -- (4,1.5);
+
+    \draw[thick] (0,0) sin (2,1) cos (4,0);
+  \end{tikzpicture}
+\end{center}
+
+\subsection {Part D}
+
+In the formula for $v_{max}$ derived in Part B, $x_0$ is only to the first power, so the ratio would simply be $2:1$. This is checked pretty easily because twice the $x$ means four times the height, which means four times the potential energy. This means max kinetic energy is four times as much, and because $v$ is squared in kinetic energy, the resultant factor is simply $2$.
 
 \end{document}
