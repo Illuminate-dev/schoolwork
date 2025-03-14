@@ -20,7 +20,7 @@
 \begin{center}
     \begin{tikzpicture}
         \draw[dashed,<->] (0,-4) -- (0,4);
-        \draw[dashed,<->] (-4,0) -- (4,0);
+        \draw[dashed,<->] (-4,0) node[anchor=north] {$-x$} -- (4,0) node[anchor=north] {$+x$};
     
         \fill (0,3) circle (4pt);
         \node[anchor=west] at (0.2,3) {$M$};
@@ -31,19 +31,22 @@
 
         \fill (0.3,0) circle (2pt);
         \node[anchor=south west] at (0.3,0.2) {$m$};
-        \node[anchor=north] at (0.3,-0.2) {$x_0$};
+        \node[anchor=north west] at (0.3,-0.2) {$x_0$};
+
+        \draw[->] (0.3,0) -- (0.15,-1.5) node[midway, anchor=east] {$F_{g,M}$};
+        \draw[->] (0.3,0) -- (0.15,1.5) node[midway, anchor=east] {$F_{g,M}$};
     \end{tikzpicture}
 \end{center}
 
-Diagram of forces on $m$:
+% Diagram of forces on $m$:
 
-\begin{center}
-    \begin{tikzpicture}
-        \fill (0,0) circle (4pt) node[anchor=north west] {$m$};
-        \draw[->] (0,0) -- (-0.15,-1.5) node[midway, anchor=east] {$F_{G,M}$};
-        \draw[->] (0,0) -- (-0.15,1.5) node[midway, anchor=east] {$F_{G,M}$};
-    \end{tikzpicture}
-\end{center}
+% \begin{center}
+%     \begin{tikzpicture}
+%         \fill (0,0) circle (4pt) node[anchor=north west] {$m$};
+%         \draw[->] (0,0) -- (-0.15,-1.5) node[midway, anchor=east] {$F_{G,M}$};
+%         \draw[->] (0,0) -- (-0.15,1.5) node[midway, anchor=east] {$F_{G,M}$};
+%     \end{tikzpicture}
+% \end{center}
 
 \vspace{1cm}
 \large\textbf{b)} The $y$ components of the net force cancel out because for both masses the mass is the same and the distance is the same. Thus, we only have to consider the $x$ component. More so, the $x$ components of each gravitational force are equal, so we can just compute one.
@@ -76,11 +79,11 @@ $$
 \begin{align*}
     \frac{d^2 x}{dt^2} &= -\frac{2GM}{({x^2+y^2})^{3/2}}x \\
     &\approx -\frac{2GM}{y^3}x \\
-    x(t) &= A\cos(\omega t + \phi) \\ 
-    &\text{where } \omega = \sqrt{\frac{2GM}{y^3}}\\
-    &\text{and } \phi = 0 \\
-    &\text{and } A = x_0 \text{ both because it starts at } x_0.\\
-    x(t) &= x_0\cos\left(\sqrt{\frac{2GM}{y^3}}t\right)
+    % x(t) &= A\cos(\omega t + \phi) \\ 
+    % &\text{where } \omega = \sqrt{\frac{2GM}{y^3}}\\
+    % &\text{and } \phi = 0 \\
+    % &\text{and } A = x_0 \text{ both because it starts at } x_0.\\
+    % x(t) &= x_0\cos\left(\sqrt{\frac{2GM}{y^3}}t\right)
 \end{align*}
 
 \vspace{1cm}
@@ -117,7 +120,7 @@ $$
 So, the new equilibrium position is 0.1 m below the block.
 
 \vspace{1cm}
-\large\textbf{c)} For this, we need to calculate when the kinetic energy of the block plus the gravitational potential energy equals the potential energy of the spring.
+\large\textbf{c)} For this, we need to calculate when the kinetic energy of the block plus the gravitational potential energy equals the potential energy of the spring. Note that this is using the spring potential with the equilibrium point when spring force is 0, not when net force is 0.
 
 \begin{align*}
     KE + PE_g &= PE_{spring}\\
@@ -170,7 +173,7 @@ Then, I'll find the speed on impact with the spring in terms of the first situat
     v_{f,2} &= \frac{1}{2}v_{f,1} 
 \end{align*}
 
-So, we can find the ratios of $v_{max}$ and ${\omega}$. First $v_{max}$ is the same as $v_{eq}$ because there's the most kinetic energy there. Also, the distance from the equilibrium point is the same for both situations (denoted as $x_{eq}$):
+So, we can find the ratios of $v_{max}$ and ${\omega}$. First $v_{max}$ is the same as $v_{eq}$ because there's the most kinetic energy there. Also, the distance from the equilibrium point is the same for both situations (denoted as $x_{eq}=0.1$):
 
 \begin{align*}
     KE_{eq} &= PE_{spring} + KE_{initial} \\
@@ -204,7 +207,7 @@ So, $A_2 = A_1\sqrt{\frac{3}{5}}$.
 \newpage
 \section{}
 
-We can use the equation for the period of a physical pendulum, we know that the only thing that can change is the moment inertia and the distance to center of mass. Mass stays the same, and all distances decrease, including those in moment of inertia.
+We can use the equation for the period of a physical pendulum, we know that the only thing that can change is the moment inertia and the distance to center of mass. The mass remains the same, and all distances decrease, including those in moment of inertia (though the factor is squared).
 
 \begin{align*}
     T_2 &= 2\pi\sqrt{\frac{I_2}{mgl_2}} \\
