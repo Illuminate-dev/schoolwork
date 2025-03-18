@@ -1,0 +1,91 @@
+%&latex
+% arara: latexmk: { options: [ '-pdf' ] }
+% arara: latexmk: { options: ['-c' ] }
+
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{AP Stats Chapter 10 FRQ}
+\author{Henry Beveridge}
+\date{March 21, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{11.}
+
+\subsection*{a)}
+
+\textbf{STATE:} 99\% confidence interval for $p_1-p_2$, where $p_1$ is the proportion of prostate cancer diagnosed men assigned to the surgery that survived 
+for 5 years and $p_2$ is the proportion of prostate-cancer diagnosed men treated with observation only that survived for 5 years.
+
+\noindent\textbf{PLAN:} two-sample z test for $p_1 - p_2$
+
+    \textbf{Random:} participants were randomly assigned
+
+    \textbf{10\%:} likely 367 is more than 10\% of all prostate-cancer patients and thus same with 364.
+
+    \textbf{Large Counts:} $\hat{p}_1n_1 = 245 \ge 10$, $(1-\hat{p}_1)n_1 = 122 \ge 10$, $\hat{p}_2n_2 = 223 \ge 10$ and $(1-\hat{p}_2)n_2 = 141 \ge 10$
+
+\noindent\textbf{DO:}
+\begin{align*}
+  \hat{p}_1 - \hat{p}_2 &\pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}} \\
+  & \text{where } \hat{p}_1 = 0.668 \text{ and } \hat{p}_2 = 0.613 \text{ and} \\
+  & n_1 = 367 \text{ and } n_2 = 364 \text{ and} \\
+  & t^* = -\text{invNorm}(area:0.005) \approx 2.576 \\
+  0.055 &\pm 0.091 \\
+\end{align*}
+
+\noindent\textbf{CONCLUDE:} Thus, we are 99\% confident that the true difference in proportions
+of prostate cancer diagnosed men who are treated with surgery and with observation is between -0.036 and 0.146.
+
+\subsection*{b)}
+% Does the confidence interval provide convincing evidence that the true proportions differ? Justify your answer.
+
+No, the confidence interval does not provide convincing evidence that the true proportions differ because the interval contains 0.
+
+\section*{12.}
+
+\subsection*{a)}
+% Construct and interpret a 99% confidence interval for the difference in mean amount of food Piper eats
+% when she is offered Pick-a-Pair and when she is offered Pickled Peppers.
+
+\textbf{STATE:} 99\% confidence interval for $\mu_1 - \mu_2$, where $\mu_1$ is the mean amount of food Piper eats when she is offered Pick-a-Pair and $\mu_2$ is the mean amount of food Piper eats when she is offered Pickled Peppers.
+
+\noindent\textbf{PLAN:} two-sample t test for $\mu_1 - \mu_2$
+
+  \textbf{Random:} each trial is randomly assigned
+
+  \textbf{10\%:} 31 is likely less than 10\% of all times Piper ate, and same with 30.
+
+  \textbf{Large Counts:} $n_1 = 31 \ge 30$ and $n_2 = 30 \ge 30$
+
+\noindent\textbf{DO:}
+\begin{align*}
+  \bar{x}_1 - \bar{x}_2 &\pm t^* \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}} \\ 
+  & \text{where } \bar{x}_1 = 85.2 \text { and } \bar{x}_2 = 82.1 \text{ and} \\
+  & s_1 = 3.45 \text{ and } s_2 = 4.62 \text{ and} \\
+  & n_1 = 31 \text{ and } n_2 = 30 \text{ and} \\
+  & t^* = -\text{invT}(area:0.005, df: 29) \approx 2.76 \\
+  3.1 &\pm 2.89
+\end{align*}
+
+\noindent\textbf{CONCLUDE:} Thus, we are 99\% confident that the true difference in means of the amount of food Piper eats when she is offered Pick-a-Pair and when she is offered Pickled Peppers is between 0.21 and 5.99.
+
+\subsection*{b)}
+% Suppose we want to test the hypothesis that the mean amount of Pick-a-Pair that Pickles eats is higher 
+% than the mean amount of Pickled Peppers she eats. State the null and alternative hypotheses for this test.
+
+\textbf{Null Hypothesis:} $H_0: \mu_1 - \mu_2 = 0$ (the mean amount of food Piper eats when she is offered Pick-a-Pair is equal to the mean amount of food Piper eats when she is offered Pickled Peppers)
+
+\noindent\textbf{Alternative Hypothesis:} $H_a: \mu_1 - \mu_2 > 0$ (the mean amount of food Piper eats when she is offered Pick-a-Pair is greater than the mean amount of food Piper eats when she is offered Pickled Peppers)
+
+\subsection*{c)}
+% The standardized test statistic is t = 2.96 and the P-value is 0.002. Draw an appropriate conclusion using
+% α = 0.01.
+Since the P-value (0.002) is less than the significance level (0.01), we reject the null hypothesis and
+conclude that there is convincing evidence that the mean amount of food Piper eats when she is offered 
+Pick-a-Pair is greater than the mean amount of food Piper eats when she is offered Pickled Peppers)
+
+\end{document}
