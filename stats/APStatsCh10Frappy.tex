@@ -1,0 +1,65 @@
+% arara: latexmk: { options: [ '-pdf' ] }
+% arara: latexmk: { options: ['-c' ] }
+
+
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{AP Stats Chapter 10 FRAPPY}
+\author{Henry Beveridge}
+\date{March 21, 2025}
+
+\begin{document}
+
+% Will using name-brand microwave popcorn result in a greater percentage of popped kernels than using
+% store-brand microwave popcorn? To find out, Briana and Maggie randomly selected 10 bags of name-
+% brand microwave popcorn and 10 bags of store-brand microwave popcorn. The chosen bags were
+% arranged in a random order. Then each bag was popped for 3.5 minutes, and the percentage of popped
+% kernels was calculated. The results are displayed in the following table.
+% Name-brand 95 88 84 94 81 90 97 93 91 86
+% Store-brand 91 89 82 82 77 78 84 86 86 90
+% Do the data provide convincing evidence that using name-brand microwave popcorn will result in a
+% greater mean percentage of popped kernels?
+
+\maketitle
+
+\section*{STATE}
+
+\begin{align*}
+  H_0: \mu_1 &= \mu_2 \\
+  H_a: \mu_1 &> \mu_2 \\
+\end{align*}
+
+Where $\mu_1$ is the mean amount of popped kernels for name-brand microwave popcorn and $\mu_2$ is the mean amount of popped kernels for store-brand microwave popcorn.
+
+\section*{PLAN}
+
+One sample t test for $\mu_1 - \mu_2$ with $\alpha = 0.05$
+
+
+\textbf{Random:} bags of popcorn are randomly selected
+
+\textbf{10\%:} 10 is less than 10\% of all bags of popcorn
+
+\textbf{Normal:} both samples have no outliers or skews
+
+\section*{DO}
+
+\begin{align*}
+  t &= \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \\
+  &\text{where } \bar{x}_1 = 89.9 \text{ and } \bar{x}_2 = 84.5 \text{ and} \\
+  &s_1 = 5.13 \text{ and } s_2 = 4.81 \text{ and} \\
+  &n_1 = 10 \text{ and } n_2 = 10 \\
+  t &= \frac{89.9 - 84.5}{\sqrt{\frac{5.13^2}{10} + \frac{4.81^2}{10}}} \\
+  &\approx 2.43 \\
+  \text{P-value} &= \text{tCDF(lower: 2.43, upper: $\infty$, df: 9)} \\
+  &\approx 0.124 \\
+\end{align*}
+
+\section*{CONCLUDE}
+
+Since the P-value of 0.124 is greater than the significance level of 0.05, we fail to reject the null hypothesis. Thus,
+there is not convincing evidence that using name-brand microwave popcorn will result in a greater mean percentage of 
+popped kernels than using store-brand microwave popcorn.
+
+\end{document}
