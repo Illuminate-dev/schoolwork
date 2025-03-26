@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{AP Stats 11.1}
+\author{Henry Beveridge}
+\date{March 27, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{1.}
+\textbf{a)} $H_0:$ The companies claimed distribution for its mixed nuts is correct. $H_a:$ The companies claimed distribution is incorrect.
+
+
+\noindent\textbf{b)} 78 cashews, 40.5 almonds, 19.5 macadamia nuts, 12 brazil nuts
+
+
+\noindent\textbf{c)} 
+
+\begin{align*}
+    x^2 &= \sum\frac{(\text{observed}-\text{expected})^2}{\text{expected}} \\
+    &= \frac{(83-78)^2}{78}+\frac{(29-40.5)^2}{40.5} + \frac{(20-19.5)^2}{19.5} + \frac{(18-12)^2}{12} \\
+    &\approx 6.599
+\end{align*}
+
+\section*{7.}
+It would not be appropriate to perform a chi-square test for these data because time spent doing the homework is not a piece of categorical data.
+
+\section*{9.}
+\textbf{STATE:} $H_0:$ the distribution of colors in the Kellogg's Froot Loops cereal is equal. $H_a:$ the distribution is not equal.
+
+\noindent\textbf{PLAN:} chi-square test for goodness of fit
+
+\textbf{Random:} selection is random
+
+\textbf{10\%:} $n=120<10\%$ of all Froot Loops
+
+\textbf{Large Counts:} All expected counts are $\dfrac{120}{6}=20$, which is greater than 5
+
+\noindent\textbf{DO:}
+\begin{align*}
+    x^2&=\sum\frac{(\text{observed}-\text{expected})^2}{\text{expected}} \\
+    &= 7.9 \\
+    df &= 6-1=5\\
+    \text{P-value} &= 0.1618 \\
+\end{align*}
+
+\noindent\textbf{CONCLUDE:} Because the P-value (0.1618) is greater than the significance level (0.05), we can't reject $H_0$ and thus the data does not provide convincing evidence that the distribution of the colors of Froot Loops is not equal.
+
+\section*{15.}
+
+\noindent\textbf{a)} $H_0:$ The probability distribution of skittle flavors is equal, with 20\% each. $H_a:$ The distribution is not equal.
+
+\noindent\textbf{b)} 12 each
+
+\noindent\textbf{c)} 11.07 for 0.05, and 15.08 for 0.01
+
+
+\end{document}
