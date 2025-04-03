@@ -1,0 +1,74 @@
+% arara: latexmk: { options: [ '-pdf' ] }
+% arara: latexmk: { options: ['-c' ] }
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+
+\title{AP Physics C Test 1 Corrections}
+\author{Henry Beveridge}
+\date{March 25, 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{2.}
+Constant acceleration means that we can solve this using the following equation:
+\begin{align*}
+    \theta_f&=\frac{1}{2}\alpha t^2 \\
+    16 \cdot2\pi&= \frac{1}{2}\alpha(10)^2 \\
+    \frac{32\pi\cdot 2}{100} &= \alpha \\
+    \alpha &= \frac{16\pi}{25} \,\text{s}^{-2}
+\end{align*}
+Then we can use the following equation for $\omega_f$:
+\begin{align*}
+\alpha t &= \omega_f \\
+\frac{16\pi}{25}\cdot10 &= \omega_f \\
+\omega_f &= \frac{32\pi}{5} \,\text{s}^{-1}
+\end{align*}
+
+\section*{4.}
+First calculate moment of inertia:
+\begin{align*}
+I &= I_\text{thin rod} + I_\text{displacement} \\
+&= \frac{1}{12}ML^2 + Md^2 \\
+&= \frac{1}{12}ML^2 + \frac{1}{16}ML^2 \\
+&= \frac{7}{48}ML^2
+\end{align*}
+Then we use the following equations for torque to solve for $\alpha$:
+\begin{align*}
+    I\alpha &= \tau_\text{net} \\
+    &= Mg\cdot \frac{L}{4} \cdot \text{sin(150)} \\
+    \alpha &= \frac{MgL}{8I} \\
+    &= \frac{6g}{7L}
+\end{align*}
+
+\section*{5.}
+\textbf{a)} Calculate the mechanical energy for both carts and compare it to cart B.
+
+\begin{align*}
+    ME_A &= \frac{1}{2}Mv^2 + MR^2\omega^2 =\frac{3}{2}Mv^2\\
+    &= 2Mgh\\
+    gh_A &=\frac{3}{4}v^2 \\
+    ME_B &= \frac{3}{2}Mv^2 \\
+    &= 3Mgh \\
+    gh_B &= \frac{1}{2}v^2 \\
+    \frac{gh_B}{gh_A} &= \frac{2}{3}
+\end{align*}
+Thus, $h_B=\dfrac{2}{3}h$.
+
+\vspace{1cm}
+
+\noindent\textbf{b)} Friction must slow the rotation of the wheel, so it points up the ramp. Friction also is the only thing causing torque, so we can find $\alpha$ that way. Then we can just use equations for net torque and net force.  
+
+\begin{align*}
+    \tau_\text{net}&= MR^2\alpha = F_f R \\
+    \alpha &= \frac{F_f}{MR} \\
+    a &= \frac{F_f}{M} \\
+    F_\text{net} &= 2Ma= 2Mg\cdot\text{sin}(\theta)-F_f \\
+    3F_f&=2Mg\cdot\text{sin($\theta$)} \\
+    F_f&=\frac{2}{3}Mg\cdot\text{sin($\theta$)}
+\end{align*}
+
+\end{document}
